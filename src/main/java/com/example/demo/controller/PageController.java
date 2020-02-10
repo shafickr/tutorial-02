@@ -30,4 +30,13 @@ public class PageController {
 		}
 		return "hello2";
 	}
+
+	@RequestMapping("/calcu-convert/{bil1}/{bil2}")
+	public String calcuConvert(@PathVariable Integer bil1, @PathVariable Integer bil2, Model model) {
+		Integer hasil = bil1 + bil2;
+		model.addAttribute("bil1", bil1);
+		model.addAttribute("bil2", bil2);
+		model.addAttribute("hasil", hasil);
+		return "calcu-convert";
+	}
 }
